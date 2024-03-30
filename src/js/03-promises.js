@@ -4,10 +4,10 @@ const refs = {
   form: document.querySelector('form.form'),
   delay: document.querySelector('input[name="delay"]'),
   step: document.querySelector('input[name="step"]'),
-  amount: document.querySelector('input[name="amoun"]'),
+  amount: document.querySelector('input[name="amount"]'),
 };
 
-const {form, delay, step, amount} = refs
+const { form, delay, step, amount } = refs
 
 form.addEventListener('submit', promiseGenerator);
 
@@ -18,7 +18,7 @@ function promiseGenerator(event) {
   for (let positionValue = 1; positionValue <= amount.value; positionValue++) {
     createPromise(positionValue, delayValue)
       .then(({ position, delay }) => {
-        Notify.success('Fulfilled promise ${position} in ${delays}ms');
+        Notify.success('Fulfilled promise ${position} in ${delay}ms');
       })
       .catch(({ position, delay }) => {
         Notifyotify.failure('Rejected promise ${position} in ${delay}ms');
